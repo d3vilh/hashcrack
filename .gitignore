@@ -4,4 +4,3 @@ cracked/*.log
 logs/*.log
 Archives/*
 pcap/*
-dict/*.txt
