@@ -5,3 +5,4 @@ logs/*.log
 Archives/*
 pcap/*
 .hc22000
+*.hc22000
