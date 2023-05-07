@@ -4,3 +4,4 @@ cracked/*.log
 logs/*.log
 Archives/*
 pcap/*
+.hc22000
