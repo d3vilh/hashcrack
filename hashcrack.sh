@@ -28,16 +28,17 @@ if [ ! -n "$1" ]; then
 	 ${powder_blue}Usage:${normal} ./hashcrack.sh \042filename\042 \042Dictionary code\042 \042Mode to use\042
 	 ${powder_blue}Example:${normal} ${bold}./hashcrack.sh FriendWiFi.hccapx 4800 ${normal}\n
 	 ${bold}${lime_yellow}  Awailable Dictionary codes:${normal}
-	 ${powder_blue}  NAMES${normal} - NAMES_v.0.3.txt (160,653 uniq names + 25 rules)
-	 ${powder_blue}  4800${normal} - probable-v2-wpa-top4800 (4,799 lines + 25 rules)
-	 ${powder_blue}  key${normal} - Keyboard-Combinations (9,604 lines + 25 rules)
-	 ${powder_blue}  letter${normal} - Most-Popular-Letter-Passes (47,603 lines + 25 rules)
-	 ${powder_blue}  mil${normal} - milw0rm-dictionary (84,195 lines + 25 rules)
-	 ${powder_blue}  100k${normal} - 100k-most-used-passwords-NCSC (100,000 lines + 25 rules)
-	 ${powder_blue}  204k${normal} - Top204Thousand-WPA-probable-v2 (203,806 lines + 25 rules)
-	 ${powder_blue}  10m${normal} - 10-million-password-list-top-1000000 (999,998 lines +4 rules)
-	 ${powder_blue}  rock${normal} - rockyou (14,344,391 lines +4 rules)
-	 ${powder_blue}  8b${normal} - 8Billions\n
+	 ${powder_blue}  key${normal} - Keyboard-Combinations (9,604 lines + 30 rules(R4) = 7,779,240 matches) 02:40
+	 ${powder_blue}  4800${normal} - probable-v2-wpa-top4800 (4,799 lines + 30 rules(R4) = 3,888,000 matches) 1:39
+	 ${powder_blue}  DATE${normal} - dates.txt (1,019,030 uniq names + 13 rules(R3) = 45,856,350 matches) 7:15
+	 ${powder_blue}  letter${normal} - Most-Popular-Letter-Passes (47,603 lines + 30 rules(R4) = 38,558,430 matches) 1:33
+	 ${powder_blue}  NAMES${normal} - NAMES_v.0.3.txt (160,660 uniq names + 30 rules(R4) = 130,134,600 matches) 9:05
+	 ${powder_blue}  mil${normal} - milw0rm-dictionary (84,195 lines + 30 rules(R4) = 68,197,950 matches) 05:29
+	 ${powder_blue}  100k${normal} - 100k-most-used-passwords-NCSC (100,000 lines + 30 rules(R4) = 80,991,900 matches) 07:29
+	 ${powder_blue}  204k${normal} - Top204Thousand-WPA-probable-v2 (203,806 lines + 13 rules(R3) = 9,171,270 matches) 1:39
+	 ${powder_blue}  10m${normal} - 10-million-password-list-top-1000000 (999,998 lines + 13 rules(R3) = 44,999,910 matches) 3:47
+	 ${powder_blue}  rock${normal} - rockyou (14,344,391 lines +4 rules(R1) = )
+	 ${powder_blue}  phu${normal} - ph-universal-1361171. All above - rock, DATE, UA, CY (1,361,171 lines + 30 rules(R4) = 11,102,540,410 matches) 2h 41m \n
 	 ${bold}${red}If Mode not passed!${normal} The default mode = 22000 will be used.
 	 ${bold}${red}WITHOUT DICT CODE I WILL DO THE GALAXY BRUTE!${normal} This will take lot of time (all dicts one by one). \n\n"; 
 	exit; 
@@ -70,9 +71,10 @@ status_timer=180
 hstatus="--status --status-timer=$status_timer"
 
 # common rules
-common_rule1="-r ./rules/symbols.rule -r ./rules/c_att.rule"
-common_rule2="-r ./rules/c_att.rule"
-common_rule3="-r ./rules/symbols.rule"
+common_rule1="-r ./rules/c_att.rule"
+common_rule2="-r ./rules/symbols.rule"
+common_rule3="-r ./rules/symbols.rule -r ./rules/c_att.rule"
+common_rule4="-r ./rules/symbols.rule -r ./rules/c_att.rule -r ./rules/numbers.rule"
 
 # MSISDN/Mobile numbers template for Ukraine:
 ua_template=(
@@ -110,22 +112,23 @@ printf "\n(◕‿‿◕) Processing ${powder_blue}${bold}$hash2know${normal} wit
 
 # Dictionaries List
 case $pdictionary in
-	UA ) `i=0; for template in "${ua_template[@]}"; do ((i++)); hashcat $hstatus -m $hmodule -a3 $hash2know $template >> $logfile; done`;;
-	CY ) `i=0; for template in "${cy_template[@]}"; do ((i++)); hashcat $hstatus -m $hmodule -a3 $hash2know $template >> $logfile; done`;;
+	UA ) `for template in "${ua_template[@]}"; do hashcat $hstatus -m $hmodule -a3 $hash2know $template >> $logfile; done`;;
+	CY ) `for template in "${cy_template[@]}"; do hashcat $hstatus -m $hmodule -a3 $hash2know $template >> $logfile; done`;;
 #	DATE ) printf "\nThis doesnt work, my dude (°▃▃°)\n\n";; 
+	key ) `hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/Keyboard-Combinations.txt > $logfile`;;
+	4800 ) `hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/probable-v2-wpa-top4800.txt > $logfile`;;
 	DATE ) `hashcat $hstatus -m $hmodule $hash2know $common_rule3 ./dict/dates.txt > $logfile`;;
-	4800 ) `hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/probable-v2-wpa-top4800.txt > $logfile`;;
-	key ) `hashcat $hstatus -m $hmodule $hash2know ./dict/Keyboard-Combinations.txt > $logfile`;;
-	letter ) `hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/Most-Popular-Letter-Passes.txt > $logfile`;;
-	mil ) `hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/milw0rm-dictionary.txt > $logfile`;;
-	100k ) `hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/100k-most-used-passwords-NCSC.txt > $logfile`;;
-	204k ) `hashcat $hstatus -m $hmodule $hash2know $common_rule2 ./dict/Top204Thousand-WPA-probable-v2.txt > $logfile`;; 
-	10m ) `hashcat $hstatus -m $hmodule $hash2know $common_rule2 ./dict/10-million-password-list-top-1000000.txt > $logfile`;;
-	rock ) `hashcat $hstatus -m $hmodule $hash2know $common_rule2 ./dict/rockyou.txt > $logfile`;;
-	8b ) `hashcat $hstatus -m $hmodule $hash2know ./dict/rockyou.txt > $logfile`;; 
-	ph ) `hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/hotmail_ph.txt > $logfile`;;
-	NAMES ) `hashcat $hstatus -m $hmodule $hash2know $common_rule2 $common_rule3 ./dict/NAMES_v.0.3.txt > $logfile`;;
-	GALAXY ) `hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/hotmail_ph.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule3 ./dict/dates.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/hotmail_ph.txt > $logfile`;`i=0; for template in "${ua_template[@]}"; do ((i++)); hashcat $hstatus -m $hmodule -a3 $hash2know $common_rule3 $template > $logfile; done`;`i=0; for template in "${cy_template[@]}"; do ((i++)); hashcat $hstatus -m $hmodule -a3 $hash2know $common_rule3 $template > $logfile; done`;`hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/probable-v2-wpa-top4800.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know ./dict/Keyboard-Combinations.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/Most-Popular-Letter-Passes.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/milw0rm-dictionary.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/100k-most-used-passwords-NCSC.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule2 ./dict/Top204Thousand-WPA-probable-v2.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know ./dict/10-million-password-list-top-1000000.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule2 ./dict/rockyou.txt > $logfile`;; esac
+	letter ) `hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/Most-Popular-Letter-Passes.txt > $logfile`;;
+	mil ) `hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/milw0rm-dictionary.txt > $logfile`;;
+	100k ) `hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/100k-most-used-passwords-NCSC.txt > $logfile`;;
+	204k ) `hashcat $hstatus -m $hmodule $hash2know $common_rule3 ./dict/Top204Thousand-WPA-probable-v2.txt > $logfile`;; 
+	10m ) `hashcat $hstatus -m $hmodule $hash2know $common_rule3 ./dict/10-million-password-list-top-1000000.txt > $logfile`;;
+	rock ) `hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/rockyou.txt > $logfile`;;
+	ph ) `hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/hotmail_ph.txt > $logfile`;;
+	NAMES ) `hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/NAMES_v.0.3.txt > $logfile`;;
+	phu ) `hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/ph-universal-1361171.txt > $logfile`;; 
+	GALAXY ) `for template in "${ua_template[@]}"; do hashcat $hstatus -m $hmodule -a3 $hash2know $template > $logfile; done`;`for template in "${cy_template[@]}"; do hashcat $hstatus -m $hmodule -a3 $hash2know $template > $logfile; done`;`hashcat $hstatus -m $hmodule $hash2know ./dict/Keyboard-Combinations.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/probable-v2-wpa-top4800.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule2 ./dict/dates.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule3 ./dict/Most-Popular-Letter-Passes.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule3 ./dict/milw0rm-dictionary.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule3 ./dict/100k-most-used-passwords-NCSC.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/Top204Thousand-WPA-probable-v2.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/10-million-password-list-top-1000000.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule1 ./dict/rockyou.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/hotmail_ph.txt > $logfile`;`hashcat $hstatus -m $hmodule $hash2know $common_rule4 ./dict/NAMES_v.0.3.txt > $logfile`;;
+esac
 
 # Report after Run
 if grep -q "found" $logfile; then

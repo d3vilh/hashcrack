@@ -4006,7 +4006,7 @@ anderson
 anderson-courtney
 anderson-sprecher
 andersonjohnson
-andersonjr.
+andersonjr
 anderssen
 andersson
 anderst
@@ -4846,7 +4846,7 @@ antoniu
 antoniuk
 antonius
 antoniv
-antonivanovitchha1old
+antonivanovitchha
 antonopoulos
 antonopoulou
 antonov
@@ -6946,7 +6946,7 @@ audi
 audia
 audibert
 audie
-audience.
+audience
 audiero
 audino
 audirsch
@@ -7670,7 +7670,7 @@ azzie
 azznara
 azzopardi
 azzuolo
-b-st.john
+b-stjohn
 ba
 baab
 baack
@@ -10962,7 +10962,7 @@ beermann
 beermudez
 beers
 beery
-beeryjr.
+beeryjr
 bees
 beesack
 beese
@@ -11008,7 +11008,7 @@ beghtol
 begin
 begleiter
 begley
-begleyjr.
+begleyjr
 begmatov
 begnaud
 begnoche
@@ -22229,7 +22229,7 @@ carevic
 carew
 carewe
 carey
-careyjr.
+careyjr
 carfagno
 carfora
 carfrey
@@ -27559,7 +27559,7 @@ collick
 collicott
 collie
 collier
-collierjr.
+collierjr
 collifranzone
 colligan
 collignon
@@ -28178,7 +28178,7 @@ cookey
 cookie
 cookingham
 cookis
-cookjr.
+cookjr
 cookman
 cooks
 cooksey
@@ -30766,9 +30766,9 @@ czyscinski
 czysz
 czyz
 czyzewski
-d.
-d.linde
-d.werff
+d
+dlinde
+dwerff
 da
 da-weibring
 da_weibring
@@ -35531,7 +35531,6 @@ dianat
 diandra
 diane
 diane-marie
-diane\4192,
 dianelee
 dianemarie
 dianenayeon
@@ -37925,10 +37924,10 @@ dpn
 dpnbuild
 dpnis
 dpnlab
-dpnq&a
+dpnqa
 dpp
 dpu
-dr.
+dr
 draa
 drab
 drabant
@@ -39604,7 +39603,7 @@ dzuroff
 dzwonkowski
 dzyuba
 dzyubenko
-e.
+e
 eaby
 eachan
 eachelle
@@ -40136,7 +40135,7 @@ edmonstone
 edmund
 edmund/wightman
 edmunda
-edmundjr.
+edmundjr
 edmundo
 edmunds
 edmundsen
@@ -47400,7 +47399,7 @@ freelon
 freelove
 freels
 freeman
-freemanjr.
+freemanjr
 freemantle
 freemire
 freemon
@@ -54122,7 +54121,7 @@ graedel
 graef
 graefe
 graeff
-graeffjr.
+graeffjr
 graehme
 graem
 graeme
@@ -58449,7 +58448,7 @@ harrine
 harring
 harrington
 harrington-lewis
-harringtonjr.
+harringtonjr
 harriot
 harriott
 harris
@@ -60299,7 +60298,7 @@ hendricks
 hendricksbrown
 hendrickse
 hendricksen
-hendricksjr.
+hendricksjr
 hendrickson
 hendrickx
 hendrics
@@ -62736,7 +62735,6 @@ holtzlander
 holtzman
 holtzmann
 holub
-holub,
 holubar
 holum
 holverson
@@ -63703,7 +63701,6 @@ huante
 huard
 hub
 huba
-huba,
 hubac
 hubach
 hubal
@@ -66451,7 +66448,7 @@ jaecks
 jaeden
 jaegar
 jaeger
-jaeger@mangelsdorf
+mangelsdorf
 jaegers
 jaehn
 jaekel
@@ -68397,7 +68394,7 @@ jodie
 jodine
 jodlinski
 jodoin
-jodoin-st.jean
+jodoin-stjean
 jodon
 jodrey
 jodway
@@ -69241,7 +69238,7 @@ jung-suk
 jungbluth
 jungck
 junge
-jungejr.
+jungejr
 jungels
 jungen
 junger
@@ -69428,7 +69425,7 @@ jyoti
 jyotirmaya
 jyotsna
 jyuzo
-k.c.
+kc
 ka
 kaa
 kaai
@@ -78807,9 +78804,9 @@ kyzar
 kyzer
 kyzlink
 kyzyma
-l.
-l;urette
-l@sole
+l
+lurette
+lsole
 la
 la verne
 laa
@@ -88112,7 +88109,7 @@ majmudar
 majmundar
 majocka
 major
-major@shlosman
+majorshlosman
 majorga
 majorie
 majoros
@@ -91952,7 +91949,7 @@ mbali
 mbamalu
 mbonu
 mc
-mc@johnson
+mcjohnson
 mcabee
 mcabier
 mcaboy
@@ -95646,7 +95643,7 @@ miggins
 miggo
 mighty
 migicovsky
-migil5
+migil
 migl
 miglani
 migliaccio
@@ -104001,7 +103998,7 @@ nyx
 nyyssoenen
 nzi
 nziramasanga
-o@waugh
+owaugh
 o_kelly
 oachs
 oajaca
@@ -110199,7 +110196,7 @@ petergumm
 peterhoefer
 peterhop
 peterhugo
-peterj.
+peterj
 peterjacobsen
 peterjames
 peterjennergren
@@ -110221,7 +110218,7 @@ petersdorf
 petersen
 petersheim
 petersik
-petersjr.
+petersjr
 petersnyder
 peterson
 peterson-hardt
@@ -112254,7 +112251,7 @@ plunkett
 plurad
 pluselli
 plush
-plushenko,
+plushenko
 plusinski
 pluta
 plutarch
@@ -113853,7 +113850,7 @@ prescod
 prescot
 prescott
 prescual
-present!!!!
+present
 preseren
 presgraves
 presgrove
@@ -118673,7 +118670,7 @@ reutzky
 reuven
 reuveni
 reuyl
-rev.
+rev
 reva
 revach
 revache
@@ -119038,7 +119035,6 @@ richa
 richan
 richandsavage
 richard
-richard,
 richard-willim
 richardalldredge
 richardbrent
@@ -122976,7 +122972,7 @@ rzeszutko
 rzhevsky
 rzucidlo
 s-cgotha
-s.
+s
 sa
 saa
 saab
@@ -135681,7 +135677,7 @@ squires
 squitieri
 squizzato
 squyres
-sr.
+sr
 sraboni
 srader
 sradhakara
@@ -135813,6 +135809,16 @@ st-louis
 st-martin
 st-onge
 st-pierre
+st
+stclair-holmes
+stdenis
+stgermain
+stjacques
+stjohn
+stlaurent
+stlouis
+stpierre
+stvil
 st.
 st.clair-holmes
 st.denis
@@ -135823,7 +135829,7 @@ st.laurent
 st.louis
 st.pierre
 st.vil
-st@evans
+stevans
 st_james
 staab
 staack
@@ -140377,7 +140383,7 @@ szyszkiewicz
 szyszkowicz
 szyszkowski
 t
-t@wright
+twright
 ta
 taaffe
 taagepera
@@ -148041,8 +148047,8 @@ uzzell
 uzzi
 uzzle
 uzzo
-v.kotze
-v.tran
+vkotze
+vtran
 va
 vaagero
 vaardal
@@ -159944,7 +159950,7 @@ ziman
 zimand
 zimba
 zimbalist
-zimbalistjr.
+zimbalistjr
 zimbelman
 zimbler
 zimdars
