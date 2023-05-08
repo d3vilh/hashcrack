@@ -28,16 +28,16 @@ if [ ! -n "$1" ]; then
 	 ${powder_blue}Usage:${normal} ./hashcrack.sh \042filename\042 \042Dictionary code\042 \042Mode to use\042
 	 ${powder_blue}Example:${normal} ${bold}./hashcrack.sh FriendWiFi.hccapx 4800 ${normal}\n
 	 ${bold}${lime_yellow}  Awailable Dictionary codes:${normal}
-	 ${powder_blue}  key${normal} - Keyboard-Combinations (9,604 lines + 30 rules(R4) = 7,779,240 matches) 02:40
-	 ${powder_blue}  4800${normal} - probable-v2-wpa-top4800 (4,799 lines + 30 rules(R4) = 3,888,000 matches) 1:39
-	 ${powder_blue}  DATE${normal} - dates.txt (1,019,030 uniq names + 13 rules(R3) = 45,856,350 matches) 7:15
 	 ${powder_blue}  letter${normal} - Most-Popular-Letter-Passes (47,603 lines + 30 rules(R4) = 38,558,430 matches) 1:33
-	 ${powder_blue}  NAMES${normal} - NAMES_v.0.3.txt (160,660 uniq names + 30 rules(R4) = 130,134,600 matches) 9:05
-	 ${powder_blue}  mil${normal} - milw0rm-dictionary (84,195 lines + 30 rules(R4) = 68,197,950 matches) 05:29
-	 ${powder_blue}  100k${normal} - 100k-most-used-passwords-NCSC (100,000 lines + 30 rules(R4) = 80,991,900 matches) 07:29
+	 ${powder_blue}  4800${normal} - probable-v2-wpa-top4800 (4,799 lines + 30 rules(R4) = 3,888,000 matches) 1:39
 	 ${powder_blue}  204k${normal} - Top204Thousand-WPA-probable-v2 (203,806 lines + 13 rules(R3) = 9,171,270 matches) 1:39
+	 ${powder_blue}  key${normal} - Keyboard-Combinations (9,604 lines + 30 rules(R4) = 7,779,240 matches) 02:40
 	 ${powder_blue}  10m${normal} - 10-million-password-list-top-1000000 (999,998 lines + 13 rules(R3) = 44,999,910 matches) 3:47
-	 ${powder_blue}  rock${normal} - rockyou (14,344,391 lines +4 rules(R1) = )
+	 ${powder_blue}  mil${normal} - milw0rm-dictionary (84,195 lines + 30 rules(R4) = 68,197,950 matches) 05:29
+	 ${powder_blue}  DATE${normal} - dates.txt (1,019,030 uniq names + 13 rules(R3) = 45,856,350 matches) 7:15
+	 ${powder_blue}  100k${normal} - 100k-most-used-passwords-NCSC (100,000 lines + 30 rules(R4) = 80,991,900 matches) 07:29
+	 ${powder_blue}  rock${normal} - rockyou (14,344,391 lines +5 rules(R1) = 71,721,920 matches) 7:42
+	 ${powder_blue}  NAMES${normal} - NAMES_v.0.3.txt (160,660 uniq names + 30 rules(R4) = 130,134,600 matches) 9:05
 	 ${powder_blue}  phu${normal} - ph-universal-1361171. All above - rock, DATE, UA, CY (1,361,171 lines + 30 rules(R4) = 11,102,540,410 matches) 2h 41m \n
 	 ${bold}${red}If Mode not passed!${normal} The default mode = 22000 will be used.
 	 ${bold}${red}WITHOUT DICT CODE I WILL DO THE GALAXY BRUTE!${normal} This will take lot of time (all dicts one by one). \n\n"; 
